@@ -1,24 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-  // Set the theme before the page paints: the visitor's saved choice, otherwise their device setting
-  (function () {
-    var t = null;
-    try { t = localStorage.getItem('uwml-theme'); } catch (e) {}
-    if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', t);
-  })();
-</script>
-<title>UWaterloo Muslim Life</title>
-<meta name="description" content="UWaterloo Muslim Life brings a qualified scholar to Waterloo as our Director of Muslim Life, for students, alumni, faculty and staff. Come meet the Director at our first town hall.">
+<title>Waterloo Muslim Life</title>
+<meta name="description" content="Waterloo Muslim Life brings a qualified scholar to Waterloo as our Director of Muslim Life, for students, alumni, faculty and staff. Come meet the Director at our first town hall.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 <style>
-/* ===== Design system tokens (UWaterloo Muslim Life) ===== */
+/* ===== Design system tokens (Waterloo Muslim Life) ===== */
 /* Grace × Waterloo — generated from tokens.json */
 :root, [data-theme="light"] {
   --gold-100: #f2eda8; /* Waterloo Gold level 1 (PMS 600). Icon badges and soft highlight fields. Pair with black text only. */
@@ -46,22 +37,6 @@
   --hairline: var(--grey-100); /* Dividers between service tiles, card outlines where no shadow is used. */
   --shadow-card: 0px 0.6px 0.6px -1.25px rgba(0,0,0,0.18), 0px 2.29px 2.29px -2.5px rgba(0,0,0,0.16), 0px 10px 10px -3.75px rgba(0,0,0,0.06); /* Split cards and the proof pill. Measured from the reference; barely there by design. */
   --shadow-soft: 0px 4px 8px 0px rgba(204,204,204,0.10), 1px 15px 15px 0px rgba(204,204,204,0.09), 3px 34px 20px 0px rgba(204,204,204,0.05); /* Floating name card over a photo. */
-}
-[data-theme="dark"] {
-  --ground: #121212;
-  --surface-tint: #1b1a14;
-  --surface-card: #1e1e1e;
-  --ink: #ffffff;
-  --ink-muted: #b8b8b8;
-  --accent: var(--gold-300);
-  --accent-strong: var(--gold-400);
-  --accent-soft: #3a3417;
-  --action: var(--gold-300);
-  --action-ink: #000000;
-  --inverse: #000000;
-  --hairline: #2e2e2e;
-  --shadow-card: 0px 1px 2px 0px rgba(0,0,0,0.5);
-  --shadow-soft: none;
 }
 :root {
   --space-1: 4px; /* Icon to text inside a button. */
@@ -235,7 +210,7 @@
 }
 
 /* ===== Page layout ===== */
-/* UWaterloo Muslim Life — page layout.
+/* Waterloo Muslim Life — page layout.
    Built on tokens.css and components.css (the design system). Only layout lives here;
    every colour, radius, shadow and type size comes from the system's tokens. */
 
@@ -280,19 +255,6 @@ a { color: inherit; }
 .menu-toggle { display: none; width: 44px; height: 44px; border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--ink);
   place-items: center; cursor: pointer; padding: 0; }
 .menu-toggle svg { width: 24px; height: 24px; }
-/* Light / dark switch: uses the design system's own light and dark themes */
-html { color-scheme: light; }
-html[data-theme="dark"] { color-scheme: dark; }
-body { transition: background-color .2s ease, color .2s ease; }
-.theme-toggle { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-pill);
-  background: transparent; color: var(--ink); cursor: pointer; box-shadow: inset 0 0 0 1px var(--hairline); }
-.theme-toggle:hover { background: var(--accent-soft); }
-.theme-toggle svg { width: 20px; height: 20px; }
-.theme-toggle .icon-sun { display: none; }
-html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-html[data-theme="dark"] .todo { color: var(--ink) !important; }
-html[data-theme="dark"] .site-footer .container { border-top-color: #262626; }
 .menu-toggle .icon-close { display: none; }
 .site-header.is-open .menu-toggle .icon-open { display: none; }
 .site-header.is-open .menu-toggle .icon-close { display: block; }
@@ -456,7 +418,7 @@ html[data-theme="dark"] .site-footer .container { border-top-color: #262626; }
 
 <header class="site-header">
   <div class="container">
-    <a class="wordmark" href="/">UWaterloo Muslim Life</a>
+    <a class="wordmark" href="/">Waterloo Muslim Life</a>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="#event">Events</a>
       <a href="#director">Book 1-on-1</a>
@@ -465,10 +427,6 @@ html[data-theme="dark"] .site-footer .container { border-top-color: #262626; }
     </nav>
     <div class="header-actions">
       <a class="gw-btn gw-btn--sm" href="#event">RSVP <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
-        <svg class="icon-moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 12.5A6.5 6.5 0 0 1 7.5 4a6.5 6.5 0 1 0 8.5 8.5z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="3.5"/><path d="M10 2v1.5M10 16.5V18M2 10h1.5M16.5 10H18M4.3 4.3l1.1 1.1M14.6 14.6l1.1 1.1M4.3 15.7l1.1-1.1M14.6 5.4l1.1-1.1"/></svg>
-      </button>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -594,11 +552,11 @@ html[data-theme="dark"] .site-footer .container { border-top-color: #262626; }
 
 <footer class="site-footer">
   <div class="container">
-    <a class="wordmark" href="/">UWaterloo Muslim Life</a>
+    <a class="wordmark" href="/">Waterloo Muslim Life</a>
     <ul class="footer-links">
       <li><a href="https://www.instagram.com/waterloomuslimlife/">Instagram</a></li>
       <li><a href="#">WhatsApp</a></li>
-      <li><a href="mailto:hello@uwmuslimlife.com">hello@uwmuslimlife.com</a></li>
+      <li><a href="mailto:director@waterloomuslimlife.com">director@waterloomuslimlife.com</a></li>
     </ul>
   </div>
 </footer>
@@ -617,32 +575,6 @@ html[data-theme="dark"] .site-footer .container { border-top-color: #262626; }
     header.querySelectorAll('.nav a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('is-open')) { setOpen(false); toggle.focus(); } });
     window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) setOpen(false); });
-  })();
-
-  // Light / dark switch: remembers the visitor's choice; until they choose, follows their device setting
-  (function () {
-    var root = document.documentElement;
-    var btn = document.querySelector('.theme-toggle');
-    var saved = null;
-    try { saved = localStorage.getItem('uwml-theme'); } catch (e) {}
-    function label() {
-      var dark = root.getAttribute('data-theme') === 'dark';
-      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-      btn.setAttribute('title', dark ? 'Light mode' : 'Dark mode');
-    }
-    label();
-    btn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      saved = next;
-      try { localStorage.setItem('uwml-theme', next); } catch (e) {}
-      label();
-    });
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-      if (saved) return;
-      root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-      label();
-    });
   })();
 </script>
 </body>
